@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="myroot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.HouseInformation">
+  <bottom>
+    <Pagination fx:id="pagination" pageCount="10" prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+  </bottom>
+  <center>
+    <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label text="Words" />
+        <TextField fx:id="words" />
+        <Label text="Seat" />
+        <TextField fx:id="seat" />
+        <Label text="Coordinates" />
+        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+          <children>
+            <Label text="X:" />
+            <Label fx:id="coordX" text="Label" />
+            <Label text="Y:" />
+            <Label fx:id="coordY" text="Label" />
+          </children>
+          <VBox.margin>
+            <Insets />
+          </VBox.margin>
+        </HBox>
+        <Label text="Region" />
+        <ComboBox fx:id="regionBox" prefWidth="300.0" />
+        <Label text="House Members" wrapText="true" />
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <ListView fx:id="membersList" editable="true" prefHeight="200.0" prefWidth="200.0" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+              <children>
+                <Button fx:id="addMember" mnemonicParsing="false" prefWidth="70.0" text="Add" />
+                <Button fx:id="editMember" disable="true" mnemonicParsing="false" prefWidth="70.0" text="Edit" />
+                <Button fx:id="deleteMember" disable="true" mnemonicParsing="false" prefWidth="70.0" text="Delete" />
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </center>
+  <left>
+    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label text="Emblem" />
+        <ImageView fx:id="emblemImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+        <Button fx:id="editEmblem" mnemonicParsing="false" prefWidth="70.0" text="Edit" />
+        <Separator prefWidth="200.0" />
+        <Label text="Coloured flags" />
+        <VBox fx:id="flagBox" alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+          </padding>
+          <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+          </VBox.margin>
+        </VBox>
+        <Button fx:id="editFlag" mnemonicParsing="false" prefWidth="70.0" text="Edit" />
+      </children>
+    </VBox>
+  </left>
+  <right>
+    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="120.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label text="Delay, sec" />
+        <TextField fx:id="delay" alignment="CENTER" focusTraversable="false" text="3" />
+        <Button fx:id="runSlideshowButton" mnemonicParsing="false" onAction="#runSlideshow" text="Run slideshow" />
+        <Button fx:id="stopSlideshowButton" disable="true" mnemonicParsing="false" onAction="#stopSlideshow" text="Stop slideshow" />
+        <Separator prefWidth="200.0" />
+        <Button fx:id="saveButton" disable="true" mnemonicParsing="false" onAction="#save" prefWidth="70.0" text="Save" />
+        <Button fx:id="closeButton" mnemonicParsing="false" onAction="#windowClose" prefWidth="70.0" text="Close">
+          <VBox.margin>
+            <Insets />
+          </VBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <BorderPane.margin>
+        <Insets />
+      </BorderPane.margin>
+    </VBox>
+  </right>
+  <top>
+    <VBox alignment="CENTER" prefHeight="50.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label fx:id="nameHouseLabel" alignment="CENTER" text="Name of House">
+          <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+          </VBox.margin>
+        </Label>
+        <TextField fx:id="nameHouse" alignment="CENTER">
+          <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+          </VBox.margin>
+        </TextField>
+      </children>
+    </VBox>
+  </top>
+</BorderPane>
